@@ -2,6 +2,28 @@ const quizContainer = document.getElementById("quiz");
 const submitButton = document.getElementById("submit");
 const resultsContainer = document.getElementById("results");
 
+// Fetch all category names from the API
+async function fetchCategoryNames() {
+  try {
+    const response = await fetch('https://quizapi.io/api/v1/categories?apiKey=M3JGhR3ZmcosdTPNPZsgzMpkWefJCR1TGqSEnsUe');
+    const data = await response.json();
+
+    const categoryNames = data.map((category) => category.name);
+
+    return categoryNames;
+  } catch (error) {
+    console.error('Error fetching category names:', error);
+    return [];
+  }
+}
+
+async function displayCategoryNames() {
+    const categoryNames = await fetchCategoryNames();
+    
+    console.log(categoryNames); // Display the category names in the console
+}
+
+
 // Fetch quiz questions from the API
 async function fetchQuizQuestions() {
   try {
