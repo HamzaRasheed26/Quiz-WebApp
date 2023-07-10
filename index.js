@@ -80,6 +80,6 @@ function showResults() {
   resultsContainer.innerHTML = `You got ${numCorrect} out of ${quizData.length} correct!`;
 }
 
-submitButton.addEventListener("click", showResults);
+// submitButton.addEventListener("click", showResults);
 
-buildQuiz();
+// buildQuiz();
