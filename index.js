@@ -112,3 +112,14 @@ const proceedButton = document.getElementById('proceed-button');
 proceedButton.addEventListener('click', () => {
   window.location.href = 'category.html';
 });
+
+// on link click
+
+const quizLinks = document.querySelectorAll('.quiz-link');
+
+quizLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const category = event.target.dataset.category;
+    localStorage.setItem('category', category);
+  });
+});
