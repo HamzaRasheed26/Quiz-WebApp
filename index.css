@@ -99,6 +99,11 @@ nav{
   flex-direction: column;
 }
 
+#ct2{
+  background-image: url(images/background2.png);
+  height: 400px;
+}
+
 .container h1{
   color: #FFFFFF;
   font-size: 50px;
@@ -188,6 +193,29 @@ nav{
 
 .category-card a:hover{
   color: #F2B84B;
+}
+
+/* proceed */
+
+.proceed{
+  background-color: #F7F7F7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.proceed button{
+  background-color: #E89A24;
+  color: #FFFFFF;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  align-self: center;
 }
 
 /* footer */

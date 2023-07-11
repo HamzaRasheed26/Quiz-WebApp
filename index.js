@@ -106,3 +106,9 @@ function showResults() {
 // submitButton.addEventListener("click", showResults);
 
 // buildQuiz();
+
+const proceedButton = document.getElementById('proceed-button');
+
+proceedButton.addEventListener('click', () => {
+  window.location.href = 'category.html';
+});
