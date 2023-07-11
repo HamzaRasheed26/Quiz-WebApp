@@ -35,6 +35,22 @@ nav{
   color: #003E5B
 }
 
+.menu-bars{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  margin: 30px;
+}
+
+.menu-bars span{
+  width: 100%;
+  height: 3px;
+  background-color: black;
+}
+
 .menu{
   margin-left: auto;
   margin-top: 10px;
@@ -79,6 +95,8 @@ nav{
   align-self: center;
   background-color: #24292E;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
 }
 
 .container h1{
@@ -108,7 +126,7 @@ nav{
   font-size: 20px;
   cursor: pointer;
   margin-top: 20px;
-  margin-left: 45%;
+  align-self: center;
 }
 
 .container button:hover{
@@ -117,6 +135,7 @@ nav{
 
 .container img{
   width: 30%;
+  margin-top: 20px;
   margin-left: 35%;
 }
 
@@ -272,3 +291,45 @@ footer{
 }
 
 
+@media only screen and (max-width:600px){
+  .menu  {
+    display: none;
+  }
+
+  .menu-bars{
+    margin-left: auto;
+    display: flex;
+  }
+
+  .line{
+     display: block;
+  }
+
+  .category-card{
+    width: 70%;
+    margin: 20px auto;
+  }
+
+  .footer{
+    display: block;
+    padding: 20px;
+  }
+
+  .footer ul{
+    margin-left: 20px;
+  }
+
+  .footer-logo{
+    margin-left: 20%;
+  }
+
+  .footer-menu{
+    margin-left: 25%;
+    display: block;
+  }
+
+  .footer-social{
+    margin-left: 25%;
+    display: block;
+  }
+}
