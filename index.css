@@ -173,17 +173,28 @@ nav{
 
 /* footer */
 
-.footer{
+footer{
   background-color: #24292E;
   color: #FFFFFF;
+}
+
+.footer{
   padding: 20px 0px;
   margin-top: 20px;
   display: flex;
+  flex-direction: row;
+  
 }
 
 .footer-logo{
   display: flex;
   margin-left: 40px;
+  margin-top:  100px;
+}
+
+.footer-logo img{
+  height: 100px;
+  width: 100px;
 }
 
 .footer h1{
@@ -204,8 +215,21 @@ nav{
   margin-right: 40px;
 }
 
-.footer ul li{
-  margin-bottom: 10px;
+.footer h2{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+
+.footer-menu{
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+}
+
+.footer-menu ul li{
+  margin-bottom: 30px;
 }
 
 .footer a{
@@ -216,6 +240,35 @@ nav{
 
 .footer a:hover{
   color: #E89A24;
+}
+
+.footer-social{
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+}
+
+.footer-social ul li{
+  margin-bottom: 20px;
+}
+
+.footer-social a{
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.footer-social img{
+  margin-right: 10px;
+  width: 30px; 
+  height: 30px; 
+}
+
+.copyright{
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px 0px;
+  margin-top: 20px;
 }
 
 
