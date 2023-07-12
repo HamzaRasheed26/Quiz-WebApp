@@ -1,9 +1,3 @@
-const proceedButton = document.getElementById("proceed-button");
-
-proceedButton.addEventListener("click", () => {
-  window.location.href = "category.html";
-});
-
 // on link click
 
 const quizLinks = document.querySelectorAll(".quiz-link");
