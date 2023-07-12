@@ -3,7 +3,7 @@
   <head>
     <title>Quiz Application</title>
     <link rel="stylesheet" href="index.css" />
-    <link rel="shortcut icon" href="quiz_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <!-- Navbar -->
@@ -35,13 +35,68 @@
 
     <!-- Container  -->
     <div class="container" id="ct2">
-      <h1 id="topic">Topic HTML</h1>
-      <h3 id="topic-st">
-        Just started learning HTML? <br />
-        Test your HTML knowledge by answering these 10 common interview
-        questions!
+      <h1>About US</h1>
+      <h3>
+        You have great ideas, want to ask something or just want to give us some
+        feedback? <br />Please send us a message with the bellow form!
       </h3>
     </div>
+
+    <!-- about us -->
+    <div class="about-us">
+      <div class="about-us-card">
+        <img src="images/quiz_icon.png" alt="" />
+        <div>
+          <h1>Quiz <span>Cloud</span></h1>
+          <p>
+            Quiz Cloud is a web application that allows users to take quizzes
+            online. It is a simple and easy to use application that can be used
+            by anyone. It is a web application that is developed using HTML,
+            CSS, and JavaScript. It is a responsive web application that can be
+            used on any device.
+          </p>
+        </div>
+      </div>
+    </div>
+
+     <!-- contact me -->
+     <h1 class="heading">Contact Us</h1>
+     <div class="contact">
+ 
+       <div class="contact-card">
+         <a href=""><img src="images/address.png" alt="Address"></a>
+         <h2>Address</h2>
+         <p>GT Road Lahore</p>
+       </div>
+ 
+       <div class="contact-card">
+         <a href=""><img src="images/email.png" alt="Email"></a>
+         <h2>Email</h2>
+         <p>quizcloud@gmail.com</p>
+       </div>
+ 
+       <div class="contact-card">
+         <a href=""><img src="images/phone.png" alt="Contact"></a>
+         <h2>Contact</h2>
+         <p>880 (6743) 344</p>
+       </div>
+ 
+     </div>
+ 
+     <!-- contact form -->
+     <div class="contact-form">
+       <form action="" >
+         <input class="firstname" type="text" placeholder="Firstname">
+         <input type="text" class="lastname" placeholder="Lastname">
+         <br>
+         <input type="text" class="email" placeholder="Email">
+         <br>
+         <textarea placeholder="Message" name="" id="" cols="30" rows="5" class="message"></textarea>
+         <br>
+         <!-- <input type="button" class="sendbtn" value="Send a Message"> -->
+         <button class="sendbtn" >Send a Message</button>
+       </form>
+     </div>
 
     <!-- Footer -->
     <footer>
