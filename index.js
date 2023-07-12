@@ -4,6 +4,12 @@ proceedButton.addEventListener("click", () => {
   window.location.href = "category.html";
 });
 
+const seeMore = document.getElementById("see-more");
+
+seeMore.addEventListener("click", () => {
+  window.location.href = "category.html";
+});
+
 // on link click
 
 const quizLinks = document.querySelectorAll(".quiz-link");
