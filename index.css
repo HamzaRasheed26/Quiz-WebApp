@@ -379,6 +379,19 @@ footer{
   background-color: #F2B84B;
 }
 
+.result{
+  padding: 20px 10px;
+  margin: 0px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.result p{
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
 /* responsive */
 
 @media only screen and (max-width:600px){

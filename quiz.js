@@ -13,11 +13,9 @@ document.getElementById("topic-st").innerHTML =
 console.log(category);
 
 function getApi() {
-  let api = "";
-  // if (category == "Html") {
-  api =
-    "https://quizapi.io/api/v1/questions?apiKey=M3JGhR3ZmcosdTPNPZsgzMpkWefJCR1TGqSEnsUe&category=code&difficulty=Medium&limit=10&tags=HTML";
-  // }
+  let api =
+    "https://quizapi.io/api/v1/questions?apiKey=M3JGhR3ZmcosdTPNPZsgzMpkWefJCR1TGqSEnsUe&limit=10&tags=";
+  api = api + category;
   return api;
 }
 
@@ -36,7 +34,9 @@ async function fetchQuizQuestions() {
         questionData.answers.answer_c,
         questionData.answers.answer_d,
       ],
-      correctAnswer: Object.keys(questionData.correct_answers).find((key) => questionData.correct_answers[key] === "true"),
+      correctAnswer: Object.keys(questionData.correct_answers).find(
+        (key) => questionData.correct_answers[key] === "true"
+      ),
     }));
     return quizData;
   } catch (error) {
@@ -51,17 +51,18 @@ async function buildQuiz() {
 
   quizData.forEach((questionData, index) => {
     const answers = [];
+    let ans = ["answer_a", "answer_b", "answer_c", "answer_d"];
     for (let i = 0; i < questionData.answers.length; i++) {
       answers.push(
-        `<label>
-            <input type="radio" name="question${index}" value="${questionData.answers[i]}">
+        `<label id="question${index}${ans[i]}">
+            <input type="radio" name="question${index}" value="${questionData.answers[i]}" data-answer="${ans[i]}">
             ${questionData.answers[i]}
           </label><br>`
       );
     }
 
     output.push(
-      `<div class="question">${index+1}: ${questionData.question}</div>
+      `<div class="question">${index + 1}: ${questionData.question}</div>
         <div class="answers">${answers.join("")}</div>`
     );
   });
@@ -72,7 +73,7 @@ async function buildQuiz() {
 buildQuiz();
 
 const submitButton = document.querySelector(".submit-quiz button");
-const resultContainer = document.querySelector(".result");
+const resultContainer = document.querySelector(".result p");
 
 // Function to check the answers and display the result
 function checkAnswers() {
@@ -83,21 +84,27 @@ function checkAnswers() {
   for (let i = 0; i < answerContainers.length; i++) {
     const answerContainer = answerContainers[i];
     const selector = `input[name=question${i}]:checked`;
-    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+    const selectedRadio = answerContainer.querySelector(selector);
+    const userAnswer = (selectedRadio || {}).dataset.answer;
     console.log(userAnswer + " " + quizData[i].correctAnswer);
     // Check if the user's answer is correct
-    if (userAnswer === quizData[i].correctAnswer) {
+    const answer = quizData[i].correctAnswer.replace(/_correct$/, "");
+
+    const selected = document.getElementById("question" + i + userAnswer);
+    if (userAnswer === answer) {
       score++;
-      answerContainer.style.color = "green";
+      selected.style.color = "green";
     } else {
-      answerContainer.style.color = "red";
+      selected.style.color = "red";
     }
   }
 
   // Display the quiz result
   const totalQuestions = quizData.length;
   const percentage = (score / totalQuestions) * 100;
-  const resultMessage = `You scored ${score}/${totalQuestions}. Percentage: ${percentage.toFixed(2)}%`;
+  const resultMessage = `You scored ${score}/${totalQuestions}. Percentage: ${percentage.toFixed(
+    2
+  )}%`;
   resultContainer.textContent = resultMessage;
 }
 
